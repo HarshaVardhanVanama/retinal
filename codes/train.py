@@ -70,7 +70,8 @@ if not os.path.isdir(auc_out_dir):
     os.makedirs(auc_out_dir)
  
 # set training and validation dataset
-train_imgs, train_vessels =utils.get_imgs(train_dir, augmentation=True, img_size=img_size, dataset=dataset)
+#train_imgs, train_vessels =utils.get_imgs(train_dir, augmentation=True, img_size=img_size, dataset=dataset)
+train_imgs, train_vessels =utils.get_imgs(train_dir, augmentation=False, img_size=img_size, dataset=dataset)
 train_vessels=np.expand_dims(train_vessels, axis=3)
 n_all_imgs=train_imgs.shape[0]
 n_train_imgs=int((1-val_ratio)*n_all_imgs)
